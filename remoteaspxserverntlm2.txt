@@ -1,0 +1,56 @@
+Fom GIT
+===========================
+0xe20882b7
+
+*negotiate unicode 
+negotiate oem
+*request target
+
+*negotiate sign
+*negotiate seal
+negotiate lan manager key
+
+*negotiate ntlm
+
+*negotiate always sign
+
+*negotiate ntlm key
+
+*negotiate target info
+*neg key exch
+*neg 56
+
+
+
+
+FROM IIS
+===========================
+0xe28a8235
+
+*negotiate unicode   
+*request target
+
+*negotiate sign
+*negotiate seal
+
+*negotiate ntlm
+
+*negotiate always sign
+
+target type server
+*negotiate ntlm2 key
+
+negotiate target info
+neg key exch
+neg 56
+
+
+
+128 supp
+
+len = 30 (15) offset 56
+win-qnkpth3jk2o
+
+
+
+0xe2888235

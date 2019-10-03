@@ -1,0 +1,885 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><!-- start: showthread -->
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Add ntlm v1/v2 challenge respose (netntlm, netntlmv2) support to hashcat plus</title>
+<!-- start: headerinclude -->
+<link rel="alternate" type="application/rss+xml" title="Latest Threads (RSS 2.0)" href="http://hashcat.net/forum/syndication.php" />
+<link rel="alternate" type="application/atom+xml" title="Latest Threads (Atom 1.0)" href="http://hashcat.net/forum/syndication.php?type=atom1.0" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="description" content="Hashcat Forum. The place to ask for support and feature requests or to read the news from the hashcat world.">
+<script type="text/javascript" src="http://hashcat.net/forum/jscripts/prototype.js?ver=1600"></script>
+<script type="text/javascript" src="http://hashcat.net/forum/jscripts/general.js?ver=1600"></script>
+<script type="text/javascript" src="http://hashcat.net/forum/jscripts/popup_menu.js?ver=1600"></script>
+<link type="text/css" rel="stylesheet" href="http://hashcat.net/forum/cache/themes/theme10/global.css" />
+<link type="text/css" rel="stylesheet" href="http://hashcat.net/forum/cache/themes/theme1/showthread.css" />
+<link type="text/css" rel="stylesheet" href="http://hashcat.net/forum/cache/themes/theme1/star_ratings.css" />
+
+<link media="screen" type="text/css" href="/s/forum.css" rel="StyleSheet" />
+
+<script type="text/javascript">
+<!--
+	var cookieDomain = "";
+	var cookiePath = "/forum/";
+	var cookiePrefix = "";
+	var deleteevent_confirm = "Are you sure you want to delete this event?";
+	var removeattach_confirm = "Are you sure you want to remove the selected attachment from this post?";
+	var loading_text = 'Loading. <br />Please Wait..';
+	var saving_changes = 'Saving changes..';
+	var use_xmlhttprequest = "1";
+	var my_post_key = "0c0519ee5892aa449f4f96dc920244ce";
+	var imagepath = "images";
+// -->
+</script>
+
+<!-- end: headerinclude -->
+<script type="text/javascript">
+<!--
+	var quickdelete_confirm = "Are you sure you want to delete this post?";
+// -->
+</script>
+<script type="text/javascript" src="jscripts/thread.js?ver=1603"></script>
+</head>
+<body>
+	<!-- start: header -->
+<div id="container">
+		<a name="top" id="top"></a>
+		<div id="header">
+			<div class="header">
+				<h1><a href="/"><span>hashcat</span><br /> advanced password recovery</a></h1>
+				<hr />
+			</div>
+			<div class="navigation">
+				<ul>
+					<li><a href="/hashcat/" title="hashcat (CPU)">hashcat</a></li>
+					<li><a href="/hashcat-gui/" title="hashcat (GUI)">hashcat-gui</a></li>
+					<li><a href="/oclhashcat-plus/" title="oclHashcat-plus (GPU)">oclHashcat-plus</a></li>
+                                        <li><a href="/oclhashcat-lite/" title="oclHashcat-lite (GPU)">oclHashcat-lite</a></li>
+					<li class="open"><a href="/forum/" title="Hashcat Forums">Forums</a></li>
+                                        <li><a href="/trac/" title="Trac">Trac</a></li>
+                                        <li><a href="/wiki/" title="Wiki">Wiki</a></li>
+				</ul>
+			</div>
+			<div class="clear">
+			</div>
+
+
+			<div class="logo"><a href="http://hashcat.net/forum/index.php"><img src="/s/i/hashcat-icon.png" alt="hashcat Forum" title="hashcat Forum" /></a></div>
+			<div class="menu">
+				<ul>
+					<li><a href="http://hashcat.net/forum/search.php"><img src="images/toplinks/search.gif" alt="" title="" />Search</a></li>
+					<li><a href="http://hashcat.net/forum/memberlist.php"><img src="images/toplinks/memberlist.gif" alt="" title="" />Member List</a></li>
+					<li><a href="http://hashcat.net/forum/calendar.php"><img src="images/toplinks/calendar.gif" alt="" title="" />Calendar</a></li>
+					<li><a href="http://hashcat.net/forum/misc.php?action=help"><img src="images/toplinks/help.gif" alt="" title="" />Help</a></li>
+				</ul>
+			</div>
+			<hr class="hidden" />
+			<div id="panel">
+				<!-- start: header_welcomeblock_guest -->
+<script type="text/javascript">
+<!--
+	lang.username = "Username";
+	lang.password = "Password";
+	lang.login = "Login";
+	lang.lost_password = " &mdash; <a href=\"http://hashcat.net/forum/member.php?action=lostpw\">Lost Password?<\/a>";
+	lang.register_url = " &mdash; <a href=\"http://hashcat.net/forum/member.php?action=register\">Register<\/a>";
+	lang.remember_me = "Remember me";
+// -->
+</script>
+<span style="float: right;"><strong>Current time:</strong> 03-27-2013, 08:42 PM</span>
+		<span id="quick_login">Hello There, Guest! (<a href="http://hashcat.net/forum/member.php?action=login" onclick="MyBB.quickLogin(); return false;">Login</a> &mdash; <a href="http://hashcat.net/forum/member.php?action=register">Register</a>)</span>
+<!-- end: header_welcomeblock_guest -->
+			</div>
+		</div>
+		<hr class="hidden" />
+		<br class="clear" />
+		<div id="content">
+			
+			
+			
+			
+			
+			<!-- start: nav -->
+
+<div class="navigation">
+<!-- start: nav_bit -->
+<a href="http://hashcat.net/forum/index.php">hashcat Forum</a><!-- start: nav_sep -->
+ / 
+<!-- end: nav_sep -->
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<a href="forum-15.html">Misc</a><!-- start: nav_sep -->
+ / 
+<!-- end: nav_sep -->
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<a href="forum-7.html">Feature Requests</a> <img src="images/arrow_down.gif" alt="v" title="" class="pagination_breadcrumb_link" id="breadcrumb_multipage" /><!-- start: multipage_breadcrumb -->
+<div id="breadcrumb_multipage_popup" class="pagination pagination_breadcrumb" style="display: none;">
+<!-- start: multipage_page_link_current -->
+ <a href="forum-7.html" class="pagination_current">1</a>
+<!-- end: multipage_page_link_current --><!-- start: multipage_page -->
+<a href="forum-7-page-2.html" class="pagination_page">2</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="forum-7-page-3.html" class="pagination_page">3</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="forum-7-page-4.html" class="pagination_page">4</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="forum-7-page-5.html" class="pagination_page">5</a>
+<!-- end: multipage_page --><!-- start: multipage_end -->
+...  <a href="forum-7-page-12.html" class="pagination_last">12</a>
+<!-- end: multipage_end --><!-- start: multipage_nextpage -->
+<a href="forum-7-page-2.html" class="pagination_next">Next &raquo;</a>
+<!-- end: multipage_nextpage -->
+</div>
+<script type="text/javascript">
+// <!--
+	if(use_xmlhttprequest == "1")
+	{
+		new PopupMenu("breadcrumb_multipage");
+	}
+// -->
+</script>
+<!-- end: multipage_breadcrumb -->
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+ / 
+<!-- end: nav_sep_active --><!-- start: nav_bit_active -->
+<span class="active">Add ntlm v1/v2 challenge respose (netntlm, netntlmv2) support to hashcat plus</span>
+<!-- end: nav_bit_active -->
+</div>
+<!-- end: nav -->
+			<br />
+
+
+<br />
+<!-- end: header -->
+	
+	<div class="float_left">
+		
+
+	</div>
+	<div class="float_right">
+		
+	</div>
+	<!-- start: showthread_ratethread -->
+<div style="margin-top: 6px; padding-right: 10px;" class="float_right">
+		<script type="text/javascript" src="jscripts/rating.js?ver=1400"></script>
+		<div id="success_rating_2011" style="float: left; padding-top: 2px; padding-right: 10px;">&nbsp;</div>
+		<strong style="float: left; padding-right: 10px;">Thread Rating:</strong>
+		<div class="inline_rating">
+			<ul class="star_rating star_rating_notrated" id="rating_thread_2011">
+				<li style="width: 0%" class="current_rating" id="current_rating_2011">0 Votes - 0 Average</li>
+				<li><a class="one_star" title="1 star out of 5" href="./ratethread.php?tid=2011&amp;rating=1&amp;my_post_key=0c0519ee5892aa449f4f96dc920244ce">1</a></li>
+				<li><a class="two_stars" title="2 stars out of 5" href="./ratethread.php?tid=2011&amp;rating=2&amp;my_post_key=0c0519ee5892aa449f4f96dc920244ce">2</a></li>
+				<li><a class="three_stars" title="3 stars out of 5" href="./ratethread.php?tid=2011&amp;rating=3&amp;my_post_key=0c0519ee5892aa449f4f96dc920244ce">3</a></li>
+				<li><a class="four_stars" title="4 stars out of 5" href="./ratethread.php?tid=2011&amp;rating=4&amp;my_post_key=0c0519ee5892aa449f4f96dc920244ce">4</a></li>
+				<li><a class="five_stars" title="5 stars out of 5" href="./ratethread.php?tid=2011&amp;rating=5&amp;my_post_key=0c0519ee5892aa449f4f96dc920244ce">5</a></li>
+			</ul>
+		</div>
+</div>
+<!-- end: showthread_ratethread -->
+	<table border="0" cellspacing="1" cellpadding="4" class="tborder" style="clear: both; border-bottom-width: 0;">
+		<tr>
+			<td class="thead" colspan="2">
+				<div style="float: right;">
+					<span class="smalltext"><strong><a href="showthread.php?mode=threaded&amp;tid=2011&amp;pid=11763#pid11763">Threaded Mode</a> | <a href="showthread.php?mode=linear&amp;tid=2011&amp;pid=11763#pid11763">Linear Mode</a></strong></span>
+				</div>
+				<div>
+					<strong>Add ntlm v1/v2 challenge respose (netntlm, netntlmv2) support to hashcat plus</strong>
+				</div>
+			</td>
+		</tr>
+		
+	</table>
+	<div id="posts">
+		<!-- start: postbit -->
+
+<a name="pid11763" id="pid11763"></a>
+<table border="0" cellspacing="1" cellpadding="4" class="tborder" style="border-top-width: 0; " id="post_11763">
+	<tbody>
+		<tr>
+			<td class="tcat">
+				<div class="float_left smalltext">
+					01-30-2013, 05:45 AM <span id="edited_by_11763"><!-- start: postbit_editedby -->
+<span class="smalltext">(This post was last modified: 01-30-2013 11:59 PM by <a href="http://hashcat.net/forum/user-2650.html">vima</a>.)</span>
+
+
+<!-- end: postbit_editedby --></span>
+				</div>
+				<!-- start: postbit_posturl -->
+<div style="float: right; width: auto; vertical-align: top"><span class="smalltext"><strong>Post: <a href="thread-2011-post-11763.html#pid11763">#1</a></strong></span></div>
+<!-- end: postbit_posturl -->
+			</td>
+		</tr>
+
+		<tr>
+			<td class="trow1 ">
+				<table cellspacing="0" cellpadding="0" border="0" style="width: 100%;">
+					<tr>
+						<td class="post_avatar" width="1" style="">
+							
+						</td>
+						<td class="post_author">
+							<strong><span class="largetext"><a href="http://hashcat.net/forum/user-2650.html">vima</a></span></strong> <!-- start: postbit_offline -->
+<img src="images/buddy_offline.gif" title="Offline" alt="Offline" />
+<!-- end: postbit_offline --><br />
+							<span class="smalltext">
+								Junior Member<br />
+								<img src="images/star.gif" border="0" alt="*" /><img src="images/star.gif" border="0" alt="*" /><br />
+								
+							</span>
+						</td>
+						<td class="smalltext post_author_info" width="165">
+							<!-- start: postbit_author_user -->
+
+	Posts: 8<br />
+	Joined: Jan 2013
+	
+<!-- end: postbit_author_user -->
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="trow2 post_content ">
+				<span class="smalltext"><strong>Add ntlm v1/v2 challenge respose (netntlm, netntlmv2) support to hashcat plus </strong></span>
+
+				<div class="post_body" id="pid_11763">
+					Hi<br />
+<br />
+We have been using oclhashcat-plus for several months now to do GPU cracking of passwords obtained during pentests, and it works great!  <br />
+<br />
+During this period however, theres one hash type that we continually find ourselves capturing that hashcat doesnt support - NTLM challenge response hashes.  We often grab these using something like the SMB capture module from Metasploit, and have always had to resort to using John the Ripper to crack them, as there is no GPU based cracker that we are aware of that will do the job.  Attempting to crack these hashes using CPU when you have an 8 GPU system sitting idle is the definition of pain.<br />
+<br />
+Consequently, Id like to request that support be added for NTLM challenge response version 1 and 2 (known in john as netntlm and netntlmv2) in oclHashcat-plus. <br />
+<br />
+<br />
+References for these protocols are here:<br />
+<a href="http://en.wikipedia.org/wiki/NTLM" target="_blank">http://en.wikipedia.org/wiki/NTLM</a><br />
+<a href="http://davenport.sourceforge.net/ntlm.html" target="_blank">http://davenport.sourceforge.net/ntlm.html</a><br />
+<br />
+I'll provide a quick summary of the generation of NTLMv1, since that the bit Im most interested in at the moment.  Im happy to also do this for NTLMv2 if it will help and youre interested in implementing it.<br />
+<br />
+Hash creation requires a password ('hashcat' in the example below) and a variable 8 byte challenge (0x1122334455667788 is used in the example below) which is provided by the server to the client during the auth process.  NTLMv1 usually generates two hashes, one based on LM hashes, and the other based on NTLM ones, although if LM hashes are disabled (e.g. via domain policy) then you wont get anything useful for the LM portion.  I'll cover the generation of the NTLM version of the hash below (this is what is implemented as netntlm in john).  The generation of the LM hash in NTLMv1 (implemented in john as netlm) is exactlty the same, but uses the LM hash in place of the NTLM one.<br />
+<br />
+<span style="font-weight: bold;">Step 1</span><br />
+<br />
+The client converts the password (hashcat) to a NTLM hash by Unicoding the password and running it though MD4:<br />
+<div class="codeblock">
+<div class="title">Code:<br />
+</div><div class="body" dir="ltr"><code>hashcat -&gt; b4b9b02e6f09a9bd760f388b67351e2b</code></div></div>
+<br />
+<span style="font-weight: bold;">Step 2</span><br />
+<br />
+5 null bytes are appended to the hash to take it to 21 bytes:<br />
+<div class="codeblock">
+<div class="title">Code:<br />
+</div><div class="body" dir="ltr"><code>b4b9b02e6f09a9bd760f388b67351e2b0000000000</code></div></div>
+<br />
+<span style="font-weight: bold;">Step 3</span><br />
+<br />
+The value is then split in 3 x 56 bit parts:<br />
+<div class="codeblock">
+<div class="title">Code:<br />
+</div><div class="body" dir="ltr"><code>b4b9b02e6f09a9<br />
+bd760f388b6735<br />
+1e2b0000000000</code></div></div>
+<br />
+<span style="font-weight: bold;">Step 4</span><br />
+<br />
+Each 56 bit part is odd parity adjusted to result in 3 x 64 bit parts.  (Convert to binary, break into 8 x 7 bit chunks, append an odd parity bit to each chunk to result in 8 x 8 bit chunks. Then concatenate the chunks into 64 bit parts.) :<br />
+<br />
+<div class="codeblock">
+<div class="title">Code:<br />
+</div><div class="body" dir="ltr"><code>b4b9b02e6f09a9 -&gt; b55d6d04e6792652<br />
+bd760f388b6735 -&gt; bcba83e6895b9d6b<br />
+1e2b0000000000 -&gt; 1f15c10101010101</code></div></div>
+<br />
+<span style="font-weight: bold;">Step 5</span><br />
+<br />
+Each of these values is then used as a key to DES encrypt the 8 byte challenge (for this example a value of 1122334455667788 is used) resulting in 3 ciphertext blocks:<br />
+<br />
+<div class="codeblock">
+<div class="title">Code:<br />
+</div><div class="body" dir="ltr"><code>b55d6d04e6792652 KEY-&gt; DES(1122334455667788) -&gt; 51a539e6ee061f64<br />
+bcba83e6895b9d6b KEY-&gt; DES(1122334455667788) -&gt; 7cd5d48ce6c68665<br />
+1f15c10101010101 KEY-&gt; DES(1122334455667788) -&gt; 3737c5e1de26ac4c</code></div></div>
+<br />
+<span style="font-weight: bold;">Step 6</span><br />
+<br />
+The ciphertext blocks are then concatenated together to provide the final result:<br />
+<br />
+<div class="codeblock">
+<div class="title">Code:<br />
+</div><div class="body" dir="ltr"><code>51a539e6ee061f647cd5d48ce6c686653737c5e1de26ac4c</code></div></div>
+<br />
+<br />
+Let me know if any clarification is needed
+				</div>
+				
+				
+
+				<div class="post_meta" id="post_meta_11763">
+				
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="trow1 post_buttons ">
+				<div class="author_buttons float_left">
+					<!-- start: postbit_find -->
+<a href="search.php?action=finduser&amp;uid=2650"><img src="images/english/postbit_find.gif" alt="Find all posts by this user" title="Find all posts by this user" /></a>
+<!-- end: postbit_find -->
+				</div>
+				<div class="post_management_buttons float_right">
+				</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<!-- end: postbit --><!-- start: postbit -->
+
+<a name="pid11764" id="pid11764"></a>
+<table border="0" cellspacing="1" cellpadding="4" class="tborder" style="margin-top: 5px; " id="post_11764">
+	<tbody>
+		<tr>
+			<td class="tcat">
+				<div class="float_left smalltext">
+					01-30-2013, 07:20 AM <span id="edited_by_11764"></span>
+				</div>
+				<!-- start: postbit_posturl -->
+<div style="float: right; width: auto; vertical-align: top"><span class="smalltext"><strong>Post: <a href="thread-2011-post-11764.html#pid11764">#2</a></strong></span></div>
+<!-- end: postbit_posturl -->
+			</td>
+		</tr>
+
+		<tr>
+			<td class="trow1 ">
+				<table cellspacing="0" cellpadding="0" border="0" style="width: 100%;">
+					<tr>
+						<td class="post_avatar" width="1" style="">
+							
+						</td>
+						<td class="post_author">
+							<strong><span class="largetext"><a href="http://hashcat.net/forum/user-2512.html">Kuci</a></span></strong> <!-- start: postbit_offline -->
+<img src="images/buddy_offline.gif" title="Offline" alt="Offline" />
+<!-- end: postbit_offline --><br />
+							<span class="smalltext">
+								Member<br />
+								<img src="images/star.gif" border="0" alt="*" /><img src="images/star.gif" border="0" alt="*" /><img src="images/star.gif" border="0" alt="*" /><br />
+								
+							</span>
+						</td>
+						<td class="smalltext post_author_info" width="165">
+							<!-- start: postbit_author_user -->
+
+	Posts: 72<br />
+	Joined: Dec 2012
+	
+<!-- end: postbit_author_user -->
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="trow2 post_content ">
+				<span class="smalltext"><strong>RE: Add ntlm v1/v2 challenge respose (netntlm, netntlmv2) support to hashcat plus </strong></span>
+
+				<div class="post_body" id="pid_11764">
+					+1 for this one. Would be great to impletement.
+				</div>
+				
+				
+
+				<div class="post_meta" id="post_meta_11764">
+				
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="trow1 post_buttons ">
+				<div class="author_buttons float_left">
+					<!-- start: postbit_find -->
+<a href="search.php?action=finduser&amp;uid=2512"><img src="images/english/postbit_find.gif" alt="Find all posts by this user" title="Find all posts by this user" /></a>
+<!-- end: postbit_find -->
+				</div>
+				<div class="post_management_buttons float_right">
+				</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<!-- end: postbit --><!-- start: postbit -->
+
+<a name="pid11775" id="pid11775"></a>
+<table border="0" cellspacing="1" cellpadding="4" class="tborder" style="margin-top: 5px; " id="post_11775">
+	<tbody>
+		<tr>
+			<td class="tcat">
+				<div class="float_left smalltext">
+					01-30-2013, 11:59 AM <span id="edited_by_11775"></span>
+				</div>
+				<!-- start: postbit_posturl -->
+<div style="float: right; width: auto; vertical-align: top"><span class="smalltext"><strong>Post: <a href="thread-2011-post-11775.html#pid11775">#3</a></strong></span></div>
+<!-- end: postbit_posturl -->
+			</td>
+		</tr>
+
+		<tr>
+			<td class="trow1 ">
+				<table cellspacing="0" cellpadding="0" border="0" style="width: 100%;">
+					<tr>
+						<td class="post_avatar" width="1" style="padding-right: 10px;">
+							<!-- start: postbit_avatar -->
+<a href="user-1.html"><img src="./uploads/avatars/avatar_1.jpg?dateline=1357415830" alt="" width="70" height="70" /></a>
+<!-- end: postbit_avatar -->
+						</td>
+						<td class="post_author">
+							<strong><span class="largetext"><a href="http://hashcat.net/forum/user-1.html"><span style="color: green;"><strong><em>atom</em></strong></span></a></span></strong> <!-- start: postbit_offline -->
+<img src="images/buddy_offline.gif" title="Offline" alt="Offline" />
+<!-- end: postbit_offline --><br />
+							<span class="smalltext">
+								Administrator<br />
+								<img src="images/star.gif" border="0" alt="*" /><img src="images/star.gif" border="0" alt="*" /><img src="images/star.gif" border="0" alt="*" /><img src="images/star.gif" border="0" alt="*" /><img src="images/star.gif" border="0" alt="*" /><img src="images/star.gif" border="0" alt="*" /><img src="images/star.gif" border="0" alt="*" /><br />
+								
+							</span>
+						</td>
+						<td class="smalltext post_author_info" width="165">
+							<!-- start: postbit_author_user -->
+
+	Posts: 2,597<br />
+	Joined: Apr 2010
+	
+<!-- end: postbit_author_user -->
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="trow2 post_content ">
+				<span class="smalltext"><strong>RE: Add ntlm v1/v2 challenge respose (netntlm, netntlmv2) support to hashcat plus </strong></span>
+
+				<div class="post_body" id="pid_11775">
+					Excellent description. Please add this as a trac ticket, I will accept it.
+				</div>
+				
+				
+
+				<div class="post_meta" id="post_meta_11775">
+				
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="trow1 post_buttons ">
+				<div class="author_buttons float_left">
+					<!-- start: postbit_www -->
+<a href="http://hashcat.net" target="_blank"><img src="images/english/postbit_www.gif" alt="Visit this user's website" title="Visit this user's website" /></a>
+<!-- end: postbit_www --><!-- start: postbit_find -->
+<a href="search.php?action=finduser&amp;uid=1"><img src="images/english/postbit_find.gif" alt="Find all posts by this user" title="Find all posts by this user" /></a>
+<!-- end: postbit_find -->
+				</div>
+				<div class="post_management_buttons float_right">
+				</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<!-- end: postbit --><!-- start: postbit -->
+
+<a name="pid11814" id="pid11814"></a>
+<table border="0" cellspacing="1" cellpadding="4" class="tborder" style="margin-top: 5px; " id="post_11814">
+	<tbody>
+		<tr>
+			<td class="tcat">
+				<div class="float_left smalltext">
+					01-30-2013, 11:33 PM <span id="edited_by_11814"></span>
+				</div>
+				<!-- start: postbit_posturl -->
+<div style="float: right; width: auto; vertical-align: top"><span class="smalltext"><strong>Post: <a href="thread-2011-post-11814.html#pid11814">#4</a></strong></span></div>
+<!-- end: postbit_posturl -->
+			</td>
+		</tr>
+
+		<tr>
+			<td class="trow1 ">
+				<table cellspacing="0" cellpadding="0" border="0" style="width: 100%;">
+					<tr>
+						<td class="post_avatar" width="1" style="">
+							
+						</td>
+						<td class="post_author">
+							<strong><span class="largetext"><a href="http://hashcat.net/forum/user-2650.html">vima</a></span></strong> <!-- start: postbit_offline -->
+<img src="images/buddy_offline.gif" title="Offline" alt="Offline" />
+<!-- end: postbit_offline --><br />
+							<span class="smalltext">
+								Junior Member<br />
+								<img src="images/star.gif" border="0" alt="*" /><img src="images/star.gif" border="0" alt="*" /><br />
+								
+							</span>
+						</td>
+						<td class="smalltext post_author_info" width="165">
+							<!-- start: postbit_author_user -->
+
+	Posts: 8<br />
+	Joined: Jan 2013
+	
+<!-- end: postbit_author_user -->
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="trow2 post_content ">
+				<span class="smalltext"><strong>RE: Add ntlm v1/v2 challenge respose (netntlm, netntlmv2) support to hashcat plus </strong></span>
+
+				<div class="post_body" id="pid_11814">
+					Cool, thanks.<br />
+<br />
+Added as ticket 51.<br />
+<br />
+<a href="https://hashcat.net/trac/ticket/51" target="_blank">https://hashcat.net/trac/ticket/51</a><br />
+<br />
+I'll work on a description for NTLMv2 as well.
+				</div>
+				
+				
+
+				<div class="post_meta" id="post_meta_11814">
+				
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="trow1 post_buttons ">
+				<div class="author_buttons float_left">
+					<!-- start: postbit_find -->
+<a href="search.php?action=finduser&amp;uid=2650"><img src="images/english/postbit_find.gif" alt="Find all posts by this user" title="Find all posts by this user" /></a>
+<!-- end: postbit_find -->
+				</div>
+				<div class="post_management_buttons float_right">
+				</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<!-- end: postbit --><!-- start: postbit -->
+
+<a name="pid11851" id="pid11851"></a>
+<table border="0" cellspacing="1" cellpadding="4" class="tborder" style="margin-top: 5px; " id="post_11851">
+	<tbody>
+		<tr>
+			<td class="tcat">
+				<div class="float_left smalltext">
+					01-31-2013, 06:54 PM <span id="edited_by_11851"><!-- start: postbit_editedby -->
+<span class="smalltext">(This post was last modified: 01-31-2013 06:54 PM by <a href="http://hashcat.net/forum/user-1.html">atom</a>.)</span>
+
+
+<!-- end: postbit_editedby --></span>
+				</div>
+				<!-- start: postbit_posturl -->
+<div style="float: right; width: auto; vertical-align: top"><span class="smalltext"><strong>Post: <a href="thread-2011-post-11851.html#pid11851">#5</a></strong></span></div>
+<!-- end: postbit_posturl -->
+			</td>
+		</tr>
+
+		<tr>
+			<td class="trow1 ">
+				<table cellspacing="0" cellpadding="0" border="0" style="width: 100%;">
+					<tr>
+						<td class="post_avatar" width="1" style="padding-right: 10px;">
+							<!-- start: postbit_avatar -->
+<a href="user-1.html"><img src="./uploads/avatars/avatar_1.jpg?dateline=1357415830" alt="" width="70" height="70" /></a>
+<!-- end: postbit_avatar -->
+						</td>
+						<td class="post_author">
+							<strong><span class="largetext"><a href="http://hashcat.net/forum/user-1.html"><span style="color: green;"><strong><em>atom</em></strong></span></a></span></strong> <!-- start: postbit_offline -->
+<img src="images/buddy_offline.gif" title="Offline" alt="Offline" />
+<!-- end: postbit_offline --><br />
+							<span class="smalltext">
+								Administrator<br />
+								<img src="images/star.gif" border="0" alt="*" /><img src="images/star.gif" border="0" alt="*" /><img src="images/star.gif" border="0" alt="*" /><img src="images/star.gif" border="0" alt="*" /><img src="images/star.gif" border="0" alt="*" /><img src="images/star.gif" border="0" alt="*" /><img src="images/star.gif" border="0" alt="*" /><br />
+								
+							</span>
+						</td>
+						<td class="smalltext post_author_info" width="165">
+							<!-- start: postbit_author_user -->
+
+	Posts: 2,597<br />
+	Joined: Apr 2010
+	
+<!-- end: postbit_author_user -->
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="trow2 post_content ">
+				<span class="smalltext"><strong>RE: Add ntlm v1/v2 challenge respose (netntlm, netntlmv2) support to hashcat plus </strong></span>
+
+				<div class="post_body" id="pid_11851">
+					Perfect! If you are done with the description please add it as Ticket.<br />
+<br />
+Oh and btw, i've already finished v1 on CPU. Porting to GPU will be next.
+				</div>
+				
+				
+
+				<div class="post_meta" id="post_meta_11851">
+				
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="trow1 post_buttons ">
+				<div class="author_buttons float_left">
+					<!-- start: postbit_www -->
+<a href="http://hashcat.net" target="_blank"><img src="images/english/postbit_www.gif" alt="Visit this user's website" title="Visit this user's website" /></a>
+<!-- end: postbit_www --><!-- start: postbit_find -->
+<a href="search.php?action=finduser&amp;uid=1"><img src="images/english/postbit_find.gif" alt="Find all posts by this user" title="Find all posts by this user" /></a>
+<!-- end: postbit_find -->
+				</div>
+				<div class="post_management_buttons float_right">
+				</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<!-- end: postbit --><!-- start: postbit -->
+
+<a name="pid11873" id="pid11873"></a>
+<table border="0" cellspacing="1" cellpadding="4" class="tborder" style="margin-top: 5px; " id="post_11873">
+	<tbody>
+		<tr>
+			<td class="tcat">
+				<div class="float_left smalltext">
+					02-01-2013, 05:05 AM <span id="edited_by_11873"><!-- start: postbit_editedby -->
+<span class="smalltext">(This post was last modified: 02-01-2013 03:16 PM by <a href="http://hashcat.net/forum/user-2650.html">vima</a>.)</span>
+
+
+<!-- end: postbit_editedby --></span>
+				</div>
+				<!-- start: postbit_posturl -->
+<div style="float: right; width: auto; vertical-align: top"><span class="smalltext"><strong>Post: <a href="thread-2011-post-11873.html#pid11873">#6</a></strong></span></div>
+<!-- end: postbit_posturl -->
+			</td>
+		</tr>
+
+		<tr>
+			<td class="trow1 ">
+				<table cellspacing="0" cellpadding="0" border="0" style="width: 100%;">
+					<tr>
+						<td class="post_avatar" width="1" style="">
+							
+						</td>
+						<td class="post_author">
+							<strong><span class="largetext"><a href="http://hashcat.net/forum/user-2650.html">vima</a></span></strong> <!-- start: postbit_offline -->
+<img src="images/buddy_offline.gif" title="Offline" alt="Offline" />
+<!-- end: postbit_offline --><br />
+							<span class="smalltext">
+								Junior Member<br />
+								<img src="images/star.gif" border="0" alt="*" /><img src="images/star.gif" border="0" alt="*" /><br />
+								
+							</span>
+						</td>
+						<td class="smalltext post_author_info" width="165">
+							<!-- start: postbit_author_user -->
+
+	Posts: 8<br />
+	Joined: Jan 2013
+	
+<!-- end: postbit_author_user -->
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="trow2 post_content ">
+				<span class="smalltext"><strong>RE: Add ntlm v1/v2 challenge respose (netntlm, netntlmv2) support to hashcat plus </strong></span>
+
+				<div class="post_body" id="pid_11873">
+					Wow, that's an awesomely quick response atom.<br />
+<br />
+Here goes with the description of NTLMv2, added as ticket 56.<br />
+<br />
+<a href="https://hashcat.net/trac/ticket/56" target="_blank">https://hashcat.net/trac/ticket/56</a><br />
+<br />
+The NTLMv2 algorithm requires a username, authentication target (i.e. domain name) which is case sensitive but usually provided in all caps, a variable 8 byte server challenge and a variable sized blob of data which includes a variable client challenge and some other data like a timestamp.  This last field is referred to in the Metasploit SMB capture output as NT_CLIENT_CHALLENGE, and in other sources its referred to as a 'blob', which is what I will call it.<br />
+<br />
+In the example I will use the following values:<br />
+<br />
+Password: hashcat<br />
+Username: user<br />
+Domain: DOMAIN<br />
+Challenge: 0x1122334455667788<br />
+Blob: 0x0101000000000000e3a17e6c2600ce0191f59c598f8c6f4d000000000200000000000000000000&#8203;00<br />
+<br />
+<br />
+The generation process is as follows:<br />
+<br />
+<span style="font-weight: bold;">Step 1</span><br />
+<br />
+A regular NTLM hash is produced from the password (hashcat) by unicoding it and passing through MD4.<br />
+<br />
+<div class="codeblock">
+<div class="title">Code:<br />
+</div><div class="body" dir="ltr"><code>hashcat-&gt; b4b9b02e6f09a9bd760f388b67351e2b</code></div></div>
+<br />
+<br />
+<span style="font-weight: bold;">Step 2 </span><br />
+<br />
+The username (user) is converted to uppercase and concatenated with the domain name (DOMAIN).  This string is converted to unicode and hashed using HMAC_MD5 with the NTLM hash generated earlier used as the key.<br />
+<br />
+<div class="codeblock">
+<div class="title">Code:<br />
+</div><div class="body" dir="ltr"><code>USERDOMAIN -&gt; HMAC_MD5 KEY(b4b9b02e6f09a9bd760f388b67351e2b) -&gt; fb659fcf061b8a92be83024db10434b1</code></div></div>
+<br />
+<br />
+<span style="font-weight: bold;">Step 3</span><br />
+<br />
+The server challenge (0x1122334455667788) is then concatenated with the blob (0x0101000000000000e3a17e6c2600ce0191f59c598f8c6f4d00000000020000000000000000000&#8203;000) and this is fed into HMAC_MD5 with the hash just generated (fb659fcf061b8a92be83024db10434b1) used as the key.<br />
+<br />
+<div class="codeblock">
+<div class="title">Code:<br />
+</div><div class="body" dir="ltr"><code>0x11223344556677880101000000000000e3a17e6c2600ce0191f59c598f8c6f4d00000000020000&#8203;000000000000000000 <br />
+-&gt; HMAC_MD5 KEY(fb659fcf061b8a92be83024db10434b1) -&gt; d2d10fab083e422123c693587315814a</code></div></div>
+<br />
+<br />
+<span style="font-weight: bold;">Step 4</span><br />
+<br />
+The final result.<br />
+<br />
+<div class="codeblock">
+<div class="title">Code:<br />
+</div><div class="body" dir="ltr"><code>d2d10fab083e422123c693587315814a</code></div></div>
+<br />
+<br />
+Let me know if any clarification is needed.
+				</div>
+				
+				
+
+				<div class="post_meta" id="post_meta_11873">
+				
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="trow1 post_buttons ">
+				<div class="author_buttons float_left">
+					<!-- start: postbit_find -->
+<a href="search.php?action=finduser&amp;uid=2650"><img src="images/english/postbit_find.gif" alt="Find all posts by this user" title="Find all posts by this user" /></a>
+<!-- end: postbit_find -->
+				</div>
+				<div class="post_management_buttons float_right">
+				</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<!-- end: postbit -->
+	</div>
+	<table border="0" cellspacing="1" cellpadding="4" class="tborder" style="border-top-width: 0;">
+		<tr>
+			<td colspan="2" class="tfoot">
+				<!-- start: showthread_search -->
+	<div class="float_right">
+		<form action="search.php" method="post">
+			<input type="hidden" name="action" value="thread" />
+			<input type="hidden" name="tid" value="2011" />
+			<input type="text" name="keywords" value="Enter Keywords" onfocus="if(this.value == 'Enter Keywords') { this.value = ''; }" onblur="if(this.value=='') { this.value='Enter Keywords'; }" class="textbox" size="25" />
+			<input type="submit" class="button" value="Search Thread" />
+		</form>
+	</div>
+<!-- end: showthread_search -->
+				<div>
+					<strong>&laquo; <a href="thread-2011-nextoldest.html">Next Oldest</a> | <a href="thread-2011-nextnewest.html">Next Newest</a> &raquo;</strong>
+				</div>
+			</td>
+		</tr>
+	</table>
+	<div class="float_left">
+		
+	</div>
+	<div style="padding-top: 4px;" class="float_right">
+		
+	</div>
+	<br style="clear: both;" />
+	
+	
+	
+	<br />
+	<div class="float_left">
+		<ul class="thread_tools">
+			<li class="printable"><a href="printthread.php?tid=2011">View a Printable Version</a></li>
+			<li class="sendthread"><a href="sendthread.php?tid=2011">Send this Thread to a Friend</a></li>
+			<li class="subscription_add"><a href="usercp2.php?action=addsubscription&amp;tid=2011&amp;my_post_key=0c0519ee5892aa449f4f96dc920244ce">Subscribe to this thread</a></li>
+		</ul>
+	</div>
+
+	<div class="float_right" style="text-align: right;">
+		
+		
+	</div>
+	<br style="clear: both;" />
+	
+	<!-- start: footer -->
+<br />
+			<div class="bottommenu">
+				<div class="float_right"></div>
+				<div>
+					<span class="smalltext"><a href="mailto:atom@hashcat.net">Contact Us</a> | <a href="http://hashcat.net/">hashcat Homepage</a> | <a href="#top">Return to Top</a> | <a href="#content">Return to Content</a> | <a href="http://hashcat.net/forum/archive/index.php/thread-2011.html">Lite (Archive) Mode</a> | <a href="http://hashcat.net/forum/misc.php?action=syndication">RSS Syndication</a></span>
+				</div>
+			</div>
+			</div>
+		<hr class="hidden" />
+			<div id="copyright">
+				<div id="debug"></div>
+				<!-- MyBB is free software developed and maintained by a volunteer community. 
+					 It would be much appreciated by the MyBB Group if you left the full copyright and "powered by" notice intact, 
+					 to show your support for MyBB.  If you choose to remove or modify the copyright below, 
+					 you may be refused support on the MyBB Community Forums.
+					 
+					 This is free software, support us and we'll support you. -->
+Powered By <a href="http://mybb.com/" target="_blank">MyBB</a>, &copy; 2002-2013 <a href="http://mybb.com/" target="_blank">MyBB Group</a>.<br />
+				<!-- End powered by -->
+				<br />
+<br class="clear" />
+<!-- The following piece of code allows MyBB to run scheduled tasks. DO NOT REMOVE --><!-- End task image code -->
+
+		</div>
+		</div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-26660830-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- end: footer -->
+</body>
+</html>
+<!-- end: showthread -->
